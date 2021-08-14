@@ -9,3 +9,5 @@ because it takes a literal age to draw one fucking character.
 Typing in this same file in neovim is slightly faster, although the real reason 
 is that somehow this machine can barely run a terminal that is designed to 
 emulate a teletype machine from the mid 20th century.
+
+For my future self, this file goes in `$HOME/.config/nvim`.
