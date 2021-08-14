@@ -4,7 +4,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
-Plug 'machakann/vim-highlightedyank'
+"Plug 'machakann/vim-highlightedyank'
 
 " Language plugins
 Plug 'lighttiger2505/deoplete-vim-lsp'
