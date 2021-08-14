@@ -8,7 +8,6 @@ Plug 'scrooloose/nerdcommenter'
 
 " LSP / autocomplete / etc
 Plug 'neoclide/coc.nvim'
-"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}  
 
 " Language plugins
 Plug 'lighttiger2505/deoplete-vim-lsp'
