@@ -6,6 +6,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'machakann/vim-highlightedyank'
 
+" LSP / autocomplete / etc
+Plug 'neoclide/coc.nvim'
+"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}  
+
 " Language plugins
 Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
@@ -18,6 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Colorscheme 
 Plug 'morhetz/gruvbox'
 Plug 'Lokaltog/vim-distinguished'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
@@ -33,7 +38,9 @@ set wrap
 
 " 256 color schemes 
 set t_Co=256
-colorscheme distinguished
+colorscheme jellybeans
+"colorscheme distinguished
+
 " airline theme 
 let g:airline_theme='badwolf'
 
