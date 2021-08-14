@@ -6,6 +6,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'machakann/vim-highlightedyank'
 
+" Language plugins
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+" Colorscheme 
+Plug 'morhetz/gruvbox'
+Plug 'Lokaltog/vim-distinguished'
+
 call plug#end()
 
 " Other vim stuff 
@@ -20,6 +27,9 @@ set wrap
 
 " 256 color schemes 
 set t_Co=256
+colorscheme distinguished
+" airline theme 
+let g:airline_theme='ayu_dark'
 
 filetype plugin indent on 
 syntax on
@@ -48,4 +58,3 @@ augroup END
 augroup filetype
     au! BufRead,BufNewFile *.td     set filetype=tablegen
 augroup END
-
