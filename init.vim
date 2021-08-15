@@ -1,22 +1,20 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim"'       " TODO: why so many autocompletes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'machakann/vim-highlightedyank'
+Plug 'machakann/vim-highlightedyank'
 
 " LSP / autocomplete / etc
-Plug 'neoclide/coc.nvim'
-
-" Language plugins
-Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cespare/vim-toml'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/lsp-status.nvim'     " because some random fuck on the internet said so
+" see https://dev.to/casonadams/neovim-and-its-built-in-language-server-protocol-3j8g
+"
 "Plug 'dense-analysis/ale'
 "Plug 'neovim/nvim-lspconfig'
-
 
 " Colorscheme 
 Plug 'morhetz/gruvbox'
