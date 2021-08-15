@@ -10,11 +10,12 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cespare/vim-toml'
+" LSP tools
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp-status.nvim'     " because some random fuck on the internet said so
 " see https://dev.to/casonadams/neovim-and-its-built-in-language-server-protocol-3j8g
 "
 "Plug 'dense-analysis/ale'
-"Plug 'neovim/nvim-lspconfig'
 
 " Colorscheme 
 Plug 'morhetz/gruvbox'
@@ -46,6 +47,10 @@ syntax on
 
 " Cursor
 set guicursor=i:block
+
+" Try and map cnext, cprev (TODO: dont keep these specific keys)
+"nnoremap <silent> <C-n> :cnext <CR>
+"nnoremap <silent> <C-p> :cprev <CR>
 
 " Remap some keys
 nnoremap <CR> :noh<CR><CR>
