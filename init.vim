@@ -4,21 +4,27 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
-Plug 'machakann/vim-highlightedyank'
+" TODO: CHADTree?
 
 " LSP / autocomplete / etc
-Plug 'neoclide/coc.nvim', { 'branch': 'release'}
+"Plug 'neoclide/coc.nvim', { 'branch': 'release'}
+Plug 'prabirshrestha/vim-lsp'
+"Plug 'dense-analysis/ale'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cespare/vim-toml'
 " LSP tools
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/lsp-status.nvim'     " because some random fuck on the internet said so
+"Plug 'nvim-lua/lsp-status.nvim'     " because some random fuck on the internet said so
 " see https://dev.to/casonadams/neovim-and-its-built-in-language-server-protocol-3j8g
-"
-"Plug 'dense-analysis/ale'
 
-" Colorscheme 
+" Project Management 
+Plug 'ahmedkhalf/project.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Colorschemes
 Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'nanotech/jellybeans.vim'
 
@@ -64,6 +70,21 @@ imap <c-L> [s1z-`<c-o>
 " Toggle spellcheck
 nnoremap <F5> :setlocal spell! spelllang=en_gb<CR>
 
+" FZF customization
+let g:fzf_preview_window = ['right:32%', 'crtl-/']      " make default window smaller
+
+
+" Language server configs 
+" PYRIGHT
+lua << EOF
+    require'lspconfig'.pyright.setup{}
+EOF
+
+lua << EOF
+    require'lspconfig'.rust_analyzer.setup{}
+EOF
+
+
 " Syntax highlighting for llvm assembly files
 augroup filetype
     au! BufRead,BufNewFile *.ll     set filetype=llvm
@@ -97,3 +118,9 @@ let g:gutentags_cache_dir = s:vim_tags
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+" Generate extra helpfiles (at least for ALE)
+" Plugins need to be added to runtimepath before helptags can be generated
+packloadall
+" Now load all helptags after plugins have been loaded 
+silent! helptags ALL
