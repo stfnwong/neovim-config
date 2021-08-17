@@ -10,11 +10,13 @@ Plug 'scrooloose/nerdcommenter'
 "Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 "Plug 'prabirshrestha/vim-lsp'
 "Plug 'dense-analysis/ale'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+"Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cespare/vim-toml'
 
 " LSP tools
 Plug 'neovim/nvim-lspconfig'
+Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/async.vim'
 
 " Project Management 
 Plug 'ahmedkhalf/project.nvim'
@@ -78,10 +80,13 @@ let g:fzf_preview_window = ['right:32%', 'crtl-/']      " make default window sm
 lua << EOF
     require'lspconfig'.pyright.setup{}
 EOF
+"
+"lua << EOF
+"    require'lspconfig'.rust_analyzer.setup{}
+"EOF
 
-lua << EOF
-    require'lspconfig'.rust_analyzer.setup{}
-EOF
+" I don't really care about completion, but here is where I configure the
+" jump-to-definition stuff.
 
 
 " Syntax highlighting for llvm assembly files
