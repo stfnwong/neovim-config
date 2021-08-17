@@ -3,20 +3,21 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'davidhalter/jedi-vim"'       " TODO: why so many autocompletes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter' " TODO : not sure what this even does...
 " TODO: CHADTree?
 
 " LSP / autocomplete / etc
 "Plug 'neoclide/coc.nvim', { 'branch': 'release'}
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'dense-analysis/ale'
 "Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'cespare/vim-toml'
 
 " LSP tools
 Plug 'neovim/nvim-lspconfig'
-Plug 'prabirshrestha/vim-lsp'
+"Plug 'neovim/nvim-lsp'
+"Plug 'prabirshrestha/vim-lsp'
 "Plug 'prabirshrestha/async.vim'
+
+" Language specific plugins 
+Plug 'cespare/vim-toml'
 
 " Project Management 
 Plug 'ahmedkhalf/project.nvim'
@@ -52,6 +53,9 @@ let g:airline_theme='badwolf'
 filetype plugin indent on 
 syntax on
 
+" Python interpreter
+let g:python3_host_prog = '/home/javl/.pyenv/versions/neovim3/bin/python'
+
 " Cursor
 set guicursor=i:block
 
@@ -75,15 +79,22 @@ nnoremap <F5> :setlocal spell! spelllang=en_gb<CR>
 let g:fzf_preview_window = ['right:32%', 'crtl-/']      " make default window smaller
 
 
-" Language server configs 
-" PYRIGHT
+" Language servers 
+
+function! LspStatus() abort 
+    if luaeval('#vim.lsp.buf_get_clients() > 0')
+        return luaeval("require('lsp-status').status()")
+    endif
+
+    return ''
+endfunction
+
 lua << EOF
+    require'lspconfig'.ccls.setup{}
+    require'lspconfig'.rust_analyzer.setup{}
     require'lspconfig'.pyright.setup{}
+    require'lspconfig'.pylsp.setup{}
 EOF
-"
-"lua << EOF
-"    require'lspconfig'.rust_analyzer.setup{}
-"EOF
 
 " I don't really care about completion, but here is where I configure the
 " jump-to-definition stuff.
