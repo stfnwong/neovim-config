@@ -81,12 +81,12 @@ let g:fzf_preview_window = ['right:32%', 'crtl-/']      " make default window sm
 
 " ==== LANGUAGE SERVERS ==== 
 " Keybindings for LSP functions
+
 lua << EOF
 local nvim_lsp = require('lspconfig')
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -119,7 +119,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
+local servers = {'pyright', 'pyls', 'rust_analyzer', 'ccls'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -132,22 +132,20 @@ end
 EOF
 
 " Language servers 
-function! LspStatus() abort 
-    if luaeval('#vim.lsp.buf_get_clients() > 0')
-        return luaeval("require('lsp-status').status()")
-    endif
+"function! LspStatus() abort 
+"    if luaeval('#vim.lsp.buf_get_clients() > 0')
+"        return luaeval("require('lsp-status').status()")
+"    endif
+"
+"    return ''
+"endfunction
 
-    return ''
-endfunction
-
-lua << EOF
-    require'lspconfig'.ccls.setup{}
-    require'lspconfig'.rust_analyzer.setup{}
-    require'lspconfig'.pyright.setup{}
-    require'lspconfig'.pylsp.setup{}
-EOF
-" I don't really care about completion, but here is where I configure the
-" jump-to-definition stuff.
+"lua << EOF
+"    require'lspconfig'.ccls.setup{}
+"    require'lspconfig'.rust_analyzer.setup{}
+"    require'lspconfig'.pyright.setup{}
+"    require'lspconfig'.pylsp.setup{}
+"EOF
 
 
 " Syntax highlighting for llvm assembly files
