@@ -8,14 +8,13 @@ Plug 'scrooloose/nerdcommenter'
 
 " LSP / autocomplete / etc
 "Plug 'neoclide/coc.nvim', { 'branch': 'release'}
-Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/vim-lsp'
 "Plug 'dense-analysis/ale'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cespare/vim-toml'
+
 " LSP tools
 Plug 'neovim/nvim-lspconfig'
-"Plug 'nvim-lua/lsp-status.nvim'     " because some random fuck on the internet said so
-" see https://dev.to/casonadams/neovim-and-its-built-in-language-server-protocol-3j8g
 
 " Project Management 
 Plug 'ahmedkhalf/project.nvim'
@@ -30,7 +29,7 @@ Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
-" Other vim stuff 
+" Generic vim stuff 
 set number 
 set hlsearch
 set incsearch
