@@ -54,7 +54,11 @@ filetype plugin indent on
 syntax on
 
 " Python interpreter
-let g:python3_host_prog = '/usr/bin/python3'
+if has("mac")
+    let g:python3_host_prog = system('which python') 
+else
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
 
 " Cursor
 set guicursor=i:block
