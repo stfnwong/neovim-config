@@ -6,18 +6,17 @@ Plug 'scrooloose/nerdcommenter' " TODO : not sure what this even does...
 " TODO: CHADTree?
 
 " LSP / autocomplete / etc
-"Plug 'neoclide/coc.nvim', { 'branch': 'release'}
-"Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " LSP tools
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovim/nvim-lsp'
 Plug 'davidhalter/jedi-vim'  " The docs for pyls say that the base language server depends on this for definitions
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'prabirshrestha/async.vim'
 
 " Language specific plugins 
 Plug 'cespare/vim-toml'
+
+" Remote debug plugin 
+Plug 'jamestthompson3/nvim-remote-containers'
 
 " Project Management 
 Plug 'ahmedkhalf/project.nvim'
@@ -135,22 +134,10 @@ end
 
 EOF
 
-" Language servers 
-"function! LspStatus() abort 
-"    if luaeval('#vim.lsp.buf_get_clients() > 0')
-"        return luaeval("require('lsp-status').status()")
-"    endif
-"
-"    return ''
-"endfunction
-
-"lua << EOF
-"    require'lspconfig'.ccls.setup{}
-"    require'lspconfig'.rust_analyzer.setup{}
-"    require'lspconfig'.pyright.setup{}
-"    require'lspconfig'.pylsp.setup{}
-"EOF
-
+" Completion settings 
+" Actually I find auto complete (or at least automatic auto complete) a
+" massive pain.
+let g:jedi#popup_on_dot = 0
 
 " Syntax highlighting for llvm assembly files
 augroup filetype
@@ -161,9 +148,6 @@ augroup END
 augroup filetype
     au! BufRead,BufNewFile *.td     set filetype=tablegen
 augroup END
-
-
-
 
 " Use gutentags for tags 
 let g:gutentags_ctags_tagfile = '.tags'
