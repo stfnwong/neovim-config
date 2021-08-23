@@ -62,6 +62,9 @@ endif
 " Cursor
 set guicursor=i:block
 
+" Don't put swap files in the working directory
+set directory=~/.local/share/nvim/swap//
+
 " Try and map cnext, cprev (TODO: dont keep these specific keys)
 "nnoremap <silent> <C-n> :cnext <CR>
 "nnoremap <silent> <C-p> :cprev <CR>
@@ -80,6 +83,13 @@ nnoremap <F5> :setlocal spell! spelllang=en_gb<CR>
 
 " FZF customization
 let g:fzf_preview_window = ['right:32%', 'crtl-/']      " make default window smaller
+let g:fzf_action = {
+            \ 'ctrl-t': 'tab split',
+            \ 'ctrl-x': 'split',
+            \ 'ctrl-v': 'vsplit',}
+
+" enable per-command history 
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 
 " ==== LANGUAGE SERVERS ==== 
@@ -122,7 +132,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = {'pyright', 'pyls', 'rust_analyzer', 'ccls'}
+local servers = {'ccls', 'pyls', 'rust_analyzer', 'pyright'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
