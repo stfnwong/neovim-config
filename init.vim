@@ -2,7 +2,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Utils 
 Plug 'scrooloose/nerdcommenter' " TODO : not sure what this even does...
+Plug 'preservim/nerdtree'
+Plug 'jremmen/vim-ripgrep' 
+Plug 'dyng/ctrlsf.vim'
 " TODO: CHADTree?
 
 " LSP / autocomplete / etc
@@ -14,6 +18,7 @@ Plug 'davidhalter/jedi-vim'  " The docs for pyls say that the base language serv
 
 " Language specific plugins 
 Plug 'cespare/vim-toml'
+Plug 'tikhomirov/vim-glsl'
 
 " Remote debug plugin 
 Plug 'jamestthompson3/nvim-remote-containers'
@@ -81,8 +86,10 @@ imap <c-L> [s1z-`<c-o>
 " Toggle spellcheck
 nnoremap <F5> :setlocal spell! spelllang=en_gb<CR>
 
-" FZF customization
-let g:fzf_preview_window = ['right:32%', 'crtl-/']      " make default window smaller
+" ================ FZF ================ 
+nnoremap <leader>f :FZF<CR>
+let g:fzf_preview_window = {'right': '32%'}      " make default window smaller
+let g:fzf_layout = {'right': '32%'}      
 let g:fzf_action = {
             \ 'ctrl-t': 'tab split',
             \ 'ctrl-x': 'split',
@@ -91,6 +98,11 @@ let g:fzf_action = {
 " enable per-command history 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+" ================ Nerdtree ================ 
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " ==== LANGUAGE SERVERS ==== 
 " Keybindings for LSP functions
