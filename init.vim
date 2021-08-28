@@ -29,6 +29,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Colorschemes
+Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'Lokaltog/vim-distinguished'
@@ -103,6 +104,12 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" ================ CtrlSF ================ 
+nnoremap <leader>F :CtrlSF
+
+" ================ ripgrep ================ 
+let g:rg_window_location = "botright"
 
 " ==== LANGUAGE SERVERS ==== 
 " Keybindings for LSP functions
