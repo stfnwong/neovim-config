@@ -107,9 +107,25 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " ================ CtrlSF ================ 
 nnoremap <leader>F :CtrlSF
+" For my own reference here the keys for ctrlsf are 
+" 
+"    Enter, o, double-click - Open corresponding file of current line in the window which CtrlSF is launched from.
+"    <C-O> - Like Enter but open file in a horizontal split window.
+"    t - Like Enter but open file in a new tab.
+"    p - Like Enter but open file in a preview window.
+"    P - Like Enter but open file in a preview window and switch focus to it.
+"    O - Like Enter but always leave CtrlSF window opening.
+"    T - Like t but focus CtrlSF window instead of new opened tab.
+"    M - Switch result window between normal view and compact view.
+"    q - Quit CtrlSF window.
+"    <C-J> - Move cursor to next match.
+"    <C-K> - Move cursor to previous match.
+"    <C-C> - Stop a background searching process.
+
 
 " ================ ripgrep ================ 
 let g:rg_window_location = "botright"
+let g:akprg = 'rg --vimgrep --no-heading'   " use rg for ack
 
 " ==== LANGUAGE SERVERS ==== 
 " Keybindings for LSP functions
