@@ -19,6 +19,7 @@ Plug 'davidhalter/jedi-vim'  " The docs for pyls say that the base language serv
 " Language specific plugins 
 Plug 'cespare/vim-toml'
 Plug 'tikhomirov/vim-glsl'
+Plug 'tomlion/vim-solidity'       " Solidity language syntax highlight
 
 " Remote debug plugin 
 Plug 'jamestthompson3/nvim-remote-containers'
