@@ -20,6 +20,10 @@ Plug 'davidhalter/jedi-vim'  " The docs for pyls say that the base language serv
 Plug 'cespare/vim-toml'
 Plug 'tikhomirov/vim-glsl'
 Plug 'tomlion/vim-solidity'       " Solidity language syntax highlight
+Plug 'cybardev/cython.vim'       " Cython syntax highlight
+Plug 'solarnz/thrift.vim'
+" Python notebooks 
+Plug 'jupyter-vim/jupyter-vim'
 
 " Remote debug plugin 
 Plug 'jamestthompson3/nvim-remote-containers'
@@ -35,6 +39,7 @@ Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'nanotech/jellybeans.vim'
+Plug 'folke/tokyonight.nvim'
 
 call plug#end()
 
@@ -105,6 +110,23 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" ================ Nerdtree ================ 
+" Put all the default keybindings here so I don't forget them
+nnoremap <buffer> <silent> <localleader>R :JupyterRunFile<CR>
+nnoremap <buffer> <silent> <localleader>I :PythonImportThisFile<CR>
+
+" change directory for current file
+nnoremap <buffer> <silent> <localleader>d :JupyterCd %:p:h<CR>
+
+" send selection of lines to jupyer server
+nnoremap <buffer> <silent> <localleader>X :JupyterSendCell<CR>
+nnoremap <buffer> <silent> <localleader>E :JupyerSendRange<CR>
+nmap <buffer> <silent> <localleader>e :<Plug>JupyterRunTextObj
+vmap <buffer> <silent> <localleader>e :<Plug>JupyterRunVisual
+
+" send selection of lines to jupyer server
+nnoremap <buffer> <silent> <localleader>b :PythonSetBreak<CR>
 
 " ================ CtrlSF ================ 
 nnoremap <leader>F :CtrlSF
