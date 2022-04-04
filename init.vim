@@ -40,6 +40,7 @@ Plug 'rakr/vim-one'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'nanotech/jellybeans.vim'
 Plug 'folke/tokyonight.nvim'
+Plug 'bfrg/vim-cuda-syntax'
 
 call plug#end()
 
