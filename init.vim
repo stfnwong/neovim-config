@@ -93,6 +93,9 @@ imap <c-L> [s1z-`<c-o>
 " Toggle spellcheck
 nnoremap <F5> :setlocal spell! spelllang=en_gb<CR>
 
+" Remove traling whitespace 
+nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 " ================ FZF ================ 
 nnoremap <leader>f :FZF<CR>
 let g:fzf_preview_window = {'right': '32%'}      " make default window smaller
