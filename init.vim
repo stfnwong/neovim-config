@@ -65,6 +65,10 @@ let g:airline_theme='badwolf'
 filetype plugin indent on 
 syntax on
 
+" Add margin
+set colorcolumn=88
+highlight ColorColumn ctermbg=5 guibg=lightgrey
+
 " Python interpreter
 if has("mac")
     let g:python3_host_prog = system('which python') 
