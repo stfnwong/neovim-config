@@ -95,6 +95,10 @@ nnoremap <Down> gj
 imap <c-L> <c-g>u<Esc>[s1z=`]a,<c-g>u
 imap <c-L> [s1z-`<c-o>
 
+" Disable some mouse inputs 
+set mouse=
+set ttymouse=
+
 " Toggle spellcheck
 nnoremap <F5> :setlocal spell! spelllang=en_gb<CR>
 
