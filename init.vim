@@ -70,11 +70,12 @@ set colorcolumn=88
 highlight ColorColumn ctermbg=5 guibg=lightgrey
 
 " Python interpreter
-if has("mac")
-    let g:python3_host_prog = system('which python') 
-else
-    let g:python3_host_prog = '/usr/bin/python3'
-endif
+let g:python3_host_prog = system('which python')
+"if has("mac")
+"    let g:python3_host_prog = system('which python') 
+"else
+"    let g:python3_host_prog = '/usr/bin/python3'
+"endif
 
 " Cursor
 set guicursor=i:block
