@@ -23,7 +23,7 @@ Plug 'tomlion/vim-solidity'       " Solidity language syntax highlight
 Plug 'cybardev/cython.vim'       " Cython syntax highlight
 Plug 'solarnz/thrift.vim'
 " Python notebooks 
-Plug 'jupyter-vim/jupyter-vim'
+"Plug 'jupyter-vim/jupyter-vim'
 
 " Remote debug plugin 
 Plug 'jamestthompson3/nvim-remote-containers'
@@ -98,7 +98,7 @@ imap <c-L> [s1z-`<c-o>
 
 " Disable some mouse inputs 
 set mouse=
-set ttymouse=
+"set ttymouse=
 
 " Toggle spellcheck
 nnoremap <F5> :setlocal spell! spelllang=en_gb<CR>
