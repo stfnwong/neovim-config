@@ -11,4 +11,15 @@ vim.g.loaded_netrwPlugin = 1
 
 
 -- Can add a table here with more options
-nvimtree.setup()
+nvimtree.setup({
+    renderer = {
+      icons = {
+        glyphs = {
+          folder = {
+            arrow_closed = "*",   -- glyph when folder is closed
+            arrow_open = "#",     -- glyph when folder is open
+          },
+        },
+      },
+    },
+  })
