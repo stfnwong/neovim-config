@@ -1,9 +1,9 @@
-require("woctor.plugin-setup")
-require("woctor.core.options")
-require("woctor.core.keymaps")
-require("woctor.core.colorscheme")
+require("plugin-setup")
+require("core.options")
+require("core.keymaps")
+require("core.colorscheme")
 
 -- Import plugin setups 
-require("woctor.plugins.lsp-config")
-require("woctor.plugins.lualine")
-require("woctor.plugins.nvim-tree")
+require("plugins.lsp-config")
+require("plugins.lualine")
+require("plugins.nvim-tree")
