@@ -26,6 +26,7 @@ end
 
 -- wrapping
 opt.wrap = true
+opt.linebreak = true
 
 -- backspace
 -- opt.backspace = "indent,eol,start"  -- This "fixes" backspace, whatever that means

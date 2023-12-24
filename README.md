@@ -12,4 +12,15 @@ Typing in this same file in neovim is slightly faster, although the real reason
 is that somehow this machine can barely run a terminal that is designed to 
 emulate a teletype machine from the mid 20th century.
 
+### Outdated
 For my future self, this file goes in `$HOME/.config/nvim`.
+
+
+### New plugin layout using lua
+
+I followed some guide or other that puts all the lua stuff into named folders.
+From what I can tell as someone who knows no lua you glue everything together 
+in `init.lua` by using `require()`.
+
+So each plugin gets its own `lua` file that controls its settings, each of these
+is under `lua/woctor/plugins` and needs to be `require()`'d from `init.lua`.
