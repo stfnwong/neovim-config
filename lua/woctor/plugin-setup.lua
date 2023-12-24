@@ -34,7 +34,7 @@ local packer_bootstrap = ensure_packer()
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+    autocmd BufWritePost plugin-setup.lua source <afile> | PackerCompile
   augroup end
 ]])
 
@@ -72,6 +72,9 @@ return require("packer").startup(function(use)
 		"junegunn/fzf.vim",
 		requires = { "junegunn/fzf", run = ":call fzf#install()" }
 	 }
+
+     -- file explorer
+     use("nvim-tree/nvim-tree.lua")
 
      -- statusline 
      use("nvim-lualine/lualine.nvim")

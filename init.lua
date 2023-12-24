@@ -6,3 +6,4 @@ require("woctor.core.colorscheme")
 -- Import plugin setups 
 require("woctor.plugins.lsp-config")
 require("woctor.plugins.lualine")
+require("woctor.plugins.nvim-tree")
