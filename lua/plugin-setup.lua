@@ -28,13 +28,12 @@ local packer_bootstrap = ensure_packer()
 -- end)
 
 
--- Reload nvim whenever this file is saved (implies always online)
--- (Note that in the example I am looking at PackerCompile has been renamed 
--- to PackerSync)
+-- Reload nvim whenever this file is saved (implies always online) by calling PackerSync on write
+-- Note also that we assume the name of this file is plugin-setup.lua
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugin-setup.lua source <afile> | PackerCompile
+    autocmd BufWritePost plugin-setup.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -48,36 +47,47 @@ end
 -- configure the plugins 
 return require("packer").startup(function(use)
     -- Add list of plugins here 
-    use("wbthomason/packer.nvim")       -- let packer manage itself
+    use "wbthomason/packer.nvim"       -- let packer manage itself
 	-- many plugins use these lua functions 
-	use("nvim-lua/plenary.nvim")
+	use "nvim-lua/plenary.nvim"
 
     -- LSP
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
 
 	-- Colors
-    use("bluz71/vim-nightfly-guicolors")
-	use("sheerun/vim-polyglot")
-	use("morhetz/gruvbox")
-	use("rakr/vim-one")
-	use("Lokaltog/vim-distinguished")
-	use("nanotech/jellybeans.vim")
-	use("folke/tokyonight.nvim")
-	use("bfrg/vim-cuda-syntax")
+    use "bluz71/vim-nightfly-guicolors"
+	use "sheerun/vim-polyglot"
+	use "morhetz/gruvbox"
+	use "rakr/vim-one"
+	use "Lokaltog/vim-distinguished"
+	use "nanotech/jellybeans.vim"
+	use "folke/tokyonight.nvim"
+	use "bfrg/vim-cuda-syntax"
 
 	-- FZF
 	-- Note that we need some extra steps as per https://github.com/junegunn/fzf.vim/issues/1388#issuecomment-1462691362
-	use {
-		"junegunn/fzf.vim",
-		requires = { "junegunn/fzf", run = ":call fzf#install()" }
-	 }
+	--use {
+	--	"junegunn/fzf.vim",
+	--	requires = { "junegunn/fzf", run = ":call fzf#install()" }
+	-- }
 
-     -- file explorer
-     use("nvim-tree/nvim-tree.lua")
+    -- Telescope
+    use {
+      "nvim-telescope/telescope-fzf-native.nvim", 
+      run = "make"
+    }
+    use {"nvim-telescope/telescope.nvim", branch = "0.1.x"}
 
-     -- statusline 
-     use("nvim-lualine/lualine.nvim")
+    -- file explorer
+    use "nvim-tree/nvim-tree.lua"
+
+    -- I wasn't going to do it, but the file explorer seems better with some icons
+    -- NOTE: does this require ligature support in terminal?
+    use "kyazdani42/nvim-web-devicons"
+
+    -- statusline 
+    use "nvim-lualine/lualine.nvim"
 
     -- docs say add this bootstrap check here
     if packer_bootstrap then
