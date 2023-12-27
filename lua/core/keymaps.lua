@@ -17,7 +17,7 @@ keymap.set("n", "<leader>-", "<C-x>")  -- decrement number with \+
 keymap.set("n", "<leader>f", ":FZF<CR>")		-- this was my old FZF keymap
 
 -- Nvimtree keyaps 
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>E", ":NvimTreeToggle<CR>")
 
 -- Telescope keymaps 
 -- Most of these are just the default keymaps made explicit

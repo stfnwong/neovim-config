@@ -1,7 +1,6 @@
 -- All LSP configuration
 
--- return {
---   "williamboman/mason.nvim",
+-- NOTE: ensure configuration happens in this order
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
   return
@@ -21,68 +20,53 @@ mason.setup()
 
 mason_lspconfig.setup({
     -- LSPs we want installed
-    ensure_installed = { 
-      "pyright",
-      "lua_ls"
-      -- "ccls",    -- Might have to do this one manually
-      -- "rust-analyzer",  -- TODO: some issue with this...
+    ensure_installed = {
+      "pyright",   -- TODO: check out other python langservers
+      "lua_ls",
+      "clangd",     -- no ccls in mason
+      "rust_analyzer",
+      "sqlls",
+      -- docker stuff
+      "docker_compose_language_service",
+      "dockerls",
+      "yamlls",
+
+      -- TODO: stuff to figure out later
+      --"mypy",
+      --"ocaml_lsp",
+      --"julia_lsp",
     }
   })
 
 
--- TODO: call setup for each LSP?
--- eg: lspconfig.rust_analyzer.setup {
---    settings = {
---      ["rust-analyzer"] = {}
---    }
--- }
-
-
---local keymap = vim.keymap
----- enable keybinds for whatever lsp is attached to the current buffer
----- NOTE TO SELF: Figure out what the variation between this and the example really is.
---local on_attach = function(client, bufnr)
---  local opts = { nnoremap = true, silent = true, buffer = bufnr }
---
---  -- Keybinds 
---  -- Default keybinds
---  keymap.set("n", "gD", "vim.lsp.buf.declaration()<CR>", opts)
---  keymap.set("n", "gd", "vim.lsp.buf.definition()<CR>", opts)
---  keymap.set("n", "gi", "vim.lsp.buf.implementation()<CR>", opts)
---  keymap.set("n", "K", vim.lsp.buf.hover(), opts)
---  --keymap.set("n", "K", "vim.lsp.buf.hover()<CR>", opts)
---  keymap.set("n", "<C-k>", "vim.lsp.buf.signature_help()<CR>", opts)
---  keymap.set("n", "gr", "vim.lsp.buf.references()<CR>", opts)
---  keymap.set({"n", "v"}, "<leader>ca", "vim.lsp.buf.code_action()<CR>", opts)
---  keymap.set("n", "<leader>wa", "vim.lsp.buf.add_workleader_folder()<CR>", opts)
---  keymap.set("n", "<leader>wr", "vim.lsp.buf.remove_workleader_folder()<CR>", opts)
---  keymap.set("n", "<leader>wl", function() print(vim.inspect(vim.lsp.buf.list_workleader_folders())) end, opts)
---  keymap.set("n", "<leader>f", function() vim.lsp.buf.format { async = true } end, opts)
---  keymap.set("n", "<leader>rn", "vim.lsp.buf.rename()<CR>", opts)
---  keymap.set("n", "<leader>D", "vim.lsp.buf.type_definition()<CR>", opts)
---
---end
---
---
 -- If I want autocomplete then do something like
 --local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 
-
-
-
 lspconfig["pyright"].setup({
     --capabilities = capabilities,
-    on_attach = on_attach
+    -- on_attach = on_attach
   })
 
+lspconfig["clangd"].setup({})
 
-lspconfig["ccls"].setup({
+lspconfig["lua_ls"].setup({})
+
+-- TODO: what if any options do I need?
+lspconfig["rust_analyzer"].setup({
+    settings = {
+      ["rust-analyzer"] = {}
+    }
   })
 
+lspconfig["sqlls"].setup({})
+lspconfig["docker_compose_language_service"].setup({})
+lspconfig["dockerls"].setup({})
+lspconfig["yamlls"].setup({})
 
-lspconfig["lua_ls"].setup({
-  })
+--lspconfig["mypy"].setup({})
+--lspconfig["ocaml_lsp"].setup({})
+--lspconfig["julia_lsp"].setup({})
 
 
 -- Global mappings.
@@ -122,3 +106,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
