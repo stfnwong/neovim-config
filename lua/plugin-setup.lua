@@ -54,6 +54,7 @@ return require("packer").startup(function(use)
     -- LSP
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
+    use "neovim/nvim-lspconfig"
 
 	-- Colors
     use "bluz71/vim-nightfly-guicolors"
@@ -88,6 +89,9 @@ return require("packer").startup(function(use)
 
     -- statusline 
     use "nvim-lualine/lualine.nvim"
+
+    -- Navigation, editing, etc
+    use "tpope/vim-surround"
 
     -- docs say add this bootstrap check here
     if packer_bootstrap then
