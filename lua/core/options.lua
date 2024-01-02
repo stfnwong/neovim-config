@@ -24,6 +24,9 @@ end
 -- https://github.com/nvim-treesitter/nvim-treesitter#i-experience-weird-highlighting-issues-similar-to-78
 -- vim.api.nvim_set_keymap("n", "<F4>", "<cmd>write | edit | TSBufEnable highlight<cr>", {})
 
+-- Colorcolumn
+vim.api.nvim_set_option_value("colorcolumn", "88", {})
+
 -- wrapping
 opt.wrap = true
 opt.linebreak = true
