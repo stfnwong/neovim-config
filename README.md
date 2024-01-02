@@ -24,3 +24,9 @@ in `init.lua` by using `require()`.
 
 So each plugin gets its own `lua` file that controls its settings, each of these
 is under `lua/woctor/plugins` and needs to be `require()`'d from `init.lua`.
+
+
+### NetRW
+I think I prefer the old behaviour of `netrw` where you can `:e` to a directory and 
+then select something without having `nvimtree` pop up and then place the source file 
+in the current buffer.

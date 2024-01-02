@@ -9,6 +9,10 @@ end
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- TODO: I think I want the default to be netrw with nvimtree only working when I 
+-- press a specific key sequence. That is, when I do :vs or :e on a directory I want
+-- that to open in netrw.
+
 
 -- Can add a table here with more options
 nvimtree.setup({

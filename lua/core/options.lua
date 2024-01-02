@@ -48,7 +48,7 @@ opt.clipboard:append("unnamedplus")
 
 -- window splits 
 opt.splitright = true
-opt.splitbelow = true
+opt.splitbelow = false
 
 -- affect how words are joined 
 --opt.iskeyword:append("-")   -- adding this means that text joined with '-' is considered a single word

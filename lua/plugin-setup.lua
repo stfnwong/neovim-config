@@ -65,6 +65,9 @@ return require("packer").startup(function(use)
 	use "nanotech/jellybeans.vim"
 	use "folke/tokyonight.nvim"
 	use "bfrg/vim-cuda-syntax"
+	use "rebelot/kanagawa.nvim"
+    use "NLKNguyen/papercolor-theme"
+    use "romainl/Apprentice"
 
 	-- FZF
 	-- Note that we need some extra steps as per https://github.com/junegunn/fzf.vim/issues/1388#issuecomment-1462691362
