@@ -86,6 +86,15 @@ return require("packer").startup(function(use)
     -- file explorer
     use "nvim-tree/nvim-tree.lua"
 
+    -- Treesitter
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      run = function()
+        local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+        ts_update()
+      end,
+    }
+
     -- I wasn't going to do it, but the file explorer seems better with some icons
     -- NOTE: does this require ligature support in terminal?
     use "kyazdani42/nvim-web-devicons"
