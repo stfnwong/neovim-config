@@ -1,3 +1,7 @@
+# Ignore swap files, if there are any
+*.swp
+*.swo
+
 # Ignore netrw history
 .netrwhist
 
