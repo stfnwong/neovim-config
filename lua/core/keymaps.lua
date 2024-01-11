@@ -14,7 +14,7 @@ keymap.set("n", "<leader>+", "<C-a>")  -- increment number with \+
 keymap.set("n", "<leader>-", "<C-x>")  -- decrement number with \+
 
 -- FZF keymap 
-keymap.set("n", "<leader>f", ":FZF<CR>")		-- this was my old FZF keymap
+--keymap.set("n", "<leader>f", ":FZF<CR>")		-- this was my old FZF keymap
 
 -- Nvimtree keyaps 
 keymap.set("n", "<leader>E", ":NvimTreeToggle<CR>")

@@ -40,7 +40,6 @@ opt.smartcase = true
 opt.hlsearch = true         -- does this work like old vim?
 opt.incsearch = true            -- does this work like old vim?
 
-
 -- appearance
 opt.cursorline = true   -- puts a line on the cursor
 opt.termguicolors = true

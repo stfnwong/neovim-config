@@ -81,48 +81,48 @@ then select something without having `nvimtree` pop up and then place the source
 in the current buffer.
 
 
+# Keymaps 
+I can't remember all my keymaps because I'm a fucking boomer. Its possible to use 
+`:nmap` for normal mode keys, `:vmap` for visual mode keys and `:imap` for insert mode 
+keys. That should be trusted more since its never out of date.
 
-## LSP Keymaps 
+
+### Diagnostic keymaps 
+
+|-----------+-------------------------+---------------------------|
+| Key       | Description             | Function                  |
+|-----------+-------------------------+---------------------------|
+| <leader>e | Open diagnostic float   | vim.diagnostic.open_float |
+| [d        | Go to previous          | vim.diagnostic.goto_prev  |
+| ]d        | Go to previous          | vim.diagnostic.goto_next  |
+| <leader>q | Put errors in a loclist | vim.diagnostic.setloclist |
+|-----------+-------------------------+---------------------------|
+
+
+### LSP Keymaps 
+
 I forget these all the time so I've duplicated them here for my reference. Check the
 keymaps file at `lua/plugins/lsp-config.lua` for the actual keymaps
 
+```
+|------------+-------------------------+-----------------------------------------------------------|
+| Key        | Description             | Function                                                  |
+|------------+-------------------------+-----------------------------------------------------------|
+| gD         | Go to declaration       | _vim.lsp.buf.declaration_                                 |
+| gd         | Go to definition        | _vim.lsp.buf.definition_                                  |
+| K          | Hover docstring         | _vim.lsp.buf.hover_                                       |
+| gi         | Go to implementation    | _vim.lsp.buf.implementation_                              |
+| <C-k>      | Show signature          | _vim.lsp.buf.signature_help_                              |
+| <leader>od | Open a diagnostic float | _vim.diagnostic.open_float_                               |
+| <leader>wa | Add workspace folder    | _vim.lsp.buf.add_workspace_folder_                        |
+| <leader>wr | Remove workspace folder | _vim.lsp.buf.remove_workspace_folder_                     |
+| <leader>wl | List workspace folders  | _print(vim.inspect(vim.lsp.buf.list_workspace_folders()))_|
+| <leader>D  | Show type definition    | _vim.lsp.buf.type_definition_                             |
+| <leader>rn | Rename variable         | _vim.lsp.buf.rename_                                      |
+| <leader>ca | Perform code action     | _vim.lsp.buf.code_action_                                 |
+| gr         | Show references         | _vim.lsp.buf.references_                                  |
+| <leader>f  | Format at point         | _vim.lsp.buf.format_                                      |
+|------------+-------------------------+-----------------------------------------------------------|
 
 ```
 
-
-
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
-
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-    --vim.keymap.set("n", "<leader>od", vim.diagnostic.open_float, opts)
-    vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set("n", "<leader>wl", function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
-    vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format { async = true } end, opts)
-  end,
-})
-
-```
