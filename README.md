@@ -89,6 +89,7 @@ keys. That should be trusted more since its never out of date.
 
 ### Diagnostic keymaps 
 
+```
 |-----------+-------------------------+---------------------------|
 | Key       | Description             | Function                  |
 |-----------+-------------------------+---------------------------|
@@ -97,6 +98,7 @@ keys. That should be trusted more since its never out of date.
 | ]d        | Go to previous          | vim.diagnostic.goto_next  |
 | <leader>q | Put errors in a loclist | vim.diagnostic.setloclist |
 |-----------+-------------------------+---------------------------|
+```
 
 
 ### LSP Keymaps 
@@ -105,24 +107,22 @@ I forget these all the time so I've duplicated them here for my reference. Check
 keymaps file at `lua/plugins/lsp-config.lua` for the actual keymaps
 
 ```
-|------------+-------------------------+-----------------------------------------------------------|
-| Key        | Description             | Function                                                  |
-|------------+-------------------------+-----------------------------------------------------------|
-| gD         | Go to declaration       | _vim.lsp.buf.declaration_                                 |
-| gd         | Go to definition        | _vim.lsp.buf.definition_                                  |
-| K          | Hover docstring         | _vim.lsp.buf.hover_                                       |
-| gi         | Go to implementation    | _vim.lsp.buf.implementation_                              |
-| <C-k>      | Show signature          | _vim.lsp.buf.signature_help_                              |
-| <leader>od | Open a diagnostic float | _vim.diagnostic.open_float_                               |
-| <leader>wa | Add workspace folder    | _vim.lsp.buf.add_workspace_folder_                        |
-| <leader>wr | Remove workspace folder | _vim.lsp.buf.remove_workspace_folder_                     |
-| <leader>wl | List workspace folders  | _print(vim.inspect(vim.lsp.buf.list_workspace_folders()))_|
-| <leader>D  | Show type definition    | _vim.lsp.buf.type_definition_                             |
-| <leader>rn | Rename variable         | _vim.lsp.buf.rename_                                      |
-| <leader>ca | Perform code action     | _vim.lsp.buf.code_action_                                 |
-| gr         | Show references         | _vim.lsp.buf.references_                                  |
-| <leader>f  | Format at point         | _vim.lsp.buf.format_                                      |
-|------------+-------------------------+-----------------------------------------------------------|
-
+|------------+-------------------------+----------------------------------------------------------|
+| Key        | Description             | Function                                                 |
+|------------+-------------------------+----------------------------------------------------------|
+| gD         | Go to declaration       | vim.lsp.buf.declaration                                  |
+| gd         | Go to definition        | vim.lsp.buf.definition                                   |
+| K          | Hover docstring         | vim.lsp.buf.hover                                        |
+| gi         | Go to implementation    | vim.lsp.buf.implementation                               |
+| <C-k>      | Show signature          | vim.lsp.buf.signature_help                               |
+| <leader>od | Open a diagnostic float | vim.diagnostic.open_float                                |
+| <leader>wa | Add workspace folder    | vim.lsp.buf.add_workspace_folder                         |
+| <leader>wr | Remove workspace folder | vim.lsp.buf.remove_workspace_folder                      |
+| <leader>wl | List workspace folders  | print(vim.inspect(vim.lsp.buf.list_workspace_folders())) |
+| <leader>D  | Show type definition    | vim.lsp.buf.type_definition                              |
+| <leader>rn | Rename variable         | vim.lsp.buf.rename                                       |
+| <leader>ca | Perform code action     | vim.lsp.buf.code_action                                  |
+| gr         | Show references         | vim.lsp.buf.references                                   |
+| <leader>f  | Format at point         | vim.lsp.buf.format                                       |
+|------------+-------------------------+----------------------------------------------------------|
 ```
-
