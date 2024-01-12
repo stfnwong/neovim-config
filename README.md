@@ -100,6 +100,23 @@ keys. That should be trusted more since its never out of date.
 |-----------+-------------------------+---------------------------|
 ```
 
+### Telescope keymaps 
+I also forget these
+
+```
+|------------+--------------------------+------------------------|
+| Key        | Description              | Function               |
+|------------+--------------------------+------------------------|
+| <leader>ff | Find files               | :Telescope find_files  |
+| <leader>fs | Grep within files        | :Telescope live_grep   |
+| <leader>fc | Grep text under cursor   | :Telescope grep_string |
+| <leader>fb | List open buffers        | :Telescope buffers     |
+| <leader>fh | List available help tags | :Telescope help_tags   |
+|------------+--------------------------+------------------------|
+```
+
+
+
 
 ### LSP Keymaps 
 

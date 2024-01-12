@@ -78,7 +78,7 @@ return require("packer").startup(function(use)
 
     -- Telescope
     use {
-      "nvim-telescope/telescope-fzf-native.nvim", 
+      "nvim-telescope/telescope-fzf-native.nvim",
       run = "make"
     }
     use {"nvim-telescope/telescope.nvim", branch = "0.1.x"}
