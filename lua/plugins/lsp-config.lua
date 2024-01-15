@@ -34,6 +34,11 @@ mason_lspconfig.setup({
       -- shell stuff
       "bashls",
 
+      -- HDL stuff
+      "hdl_checker",
+      -- Web stuff
+      "html",
+
       -- TODO: stuff to figure out later
       --"mypy",
       --"julia_lsp",
