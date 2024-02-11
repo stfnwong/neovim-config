@@ -38,6 +38,8 @@ mason_lspconfig.setup({
       "hdl_checker",
       -- Web stuff
       "html",
+      -- Haskell stuff
+      "hls",  -- NOTE: ghcup needs to be installed for this to work
 
       -- TODO: stuff to figure out later
       --"mypy",
