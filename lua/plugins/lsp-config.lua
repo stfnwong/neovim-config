@@ -34,6 +34,9 @@ mason_lspconfig.setup({
       -- shell stuff
       "bashls",
 
+      -- Clojure 
+      "clojure_lsp",
+
       -- HDL stuff
       "hdl_checker",
       -- Web stuff
