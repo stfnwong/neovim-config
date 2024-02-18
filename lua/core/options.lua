@@ -27,6 +27,9 @@ end
 -- Colorcolumn
 vim.api.nvim_set_option_value("colorcolumn", "88", {})
 
+-- Use relative line numbers
+vim.wo.relativenumber = true
+
 -- wrapping
 opt.wrap = true
 opt.linebreak = true
