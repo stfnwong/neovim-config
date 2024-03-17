@@ -105,6 +105,9 @@ return require("packer").startup(function(use)
     -- Navigation, editing, etc
     use "tpope/vim-surround"
 
+    -- Jupyter plugin 
+    use "luk400/vim-jukit"
+
     -- docs say add this bootstrap check here
     if packer_bootstrap then
         require("packer").sync()
