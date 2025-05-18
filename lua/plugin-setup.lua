@@ -1,18 +1,43 @@
 -- Taken directly from bootstrapping section of 
 -- https://github.com/wbthomason/packer.nvim#bootstrapping
 
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({"git", "clone", "--depth", '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
+-- Since packer seems to be dead now I will switch this to use `lazy`
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
   end
-  return false
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "plugins" },
+  },
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "habamax" } },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
+})
+
 
 -- return require("packer").startup(function(use)
 --   use "wbthomason/packer.nvim"
@@ -30,24 +55,24 @@ local packer_bootstrap = ensure_packer()
 
 -- Reload nvim whenever this file is saved (implies always online) by calling PackerSync on write
 -- Note also that we assume the name of this file is plugin-setup.lua
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugin-setup.lua source <afile> | PackerSync
-  augroup end
-]])
-
-
-local status, packer = pcall(require, "packer")
-if not status then
-    return
-end
-
+--vim.cmd([[
+--  augroup packer_user_config
+--    autocmd!
+--    autocmd BufWritePost plugin-setup.lua source <afile> | PackerSync
+--  augroup end
+--]])
+--
+--
+--local status, packer = pcall(require, "packer")
+--if not status then
+--    return
+--end
+--
 
 -- configure the plugins 
 return require("packer").startup(function(use)
     -- Add list of plugins here 
-    use "wbthomason/packer.nvim"       -- let packer manage itself
+    -- use "wbthomason/packer.nvim"       -- let packer manage itself
 	-- many plugins use these lua functions 
 	use "nvim-lua/plenary.nvim"
 
