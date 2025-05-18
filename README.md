@@ -78,7 +78,8 @@ is under `lua/woctor/plugins` and needs to be `require()`'d from `init.lua`.
 ### NetRW
 I think I prefer the old behaviour of `netrw` where you can `:e` to a directory and 
 then select something without having `nvimtree` pop up and then place the source file 
-in the current buffer.
+in the current buffer. (NOTE: as of this writing I haven't got this in the form I want
+so this feature is still broken.)
 
 
 # Keymaps 
@@ -114,8 +115,6 @@ I also forget these
 | <leader>fh | List available help tags | :Telescope help_tags   |
 |------------+--------------------------+------------------------|
 ```
-
-
 
 
 ### LSP Keymaps 
