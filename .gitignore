@@ -7,3 +7,6 @@
 
 # I guess I should ignore this plugins directory, since its going to be filled automatically
 plugin/
+
+# Ignore jukits folder if that turns up 
+.jukit/
