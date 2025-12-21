@@ -47,7 +47,7 @@ mason_lspconfig.setup({
       -- TODO: stuff to figure out later
       --"mypy",
       
-      "julials",
+      --"julials",
     }
   })
 
