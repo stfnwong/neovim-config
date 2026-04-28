@@ -18,28 +18,38 @@ vim.opt.rtp:prepend(lazypath)
 
 -- configure the plugins 
 return require("lazy").setup({
+	spec = {
+		-- Add LazyVim and import its plugin
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		-- import extras modules here
+		-- import local plugins 
+		{ import = "plugins" },
+		{ import = "plugins.lsp" },   -- for mason
+	},
+
+
     -- Add list of plugins here 
 	
 	-- many plugins use these lua functions 
-	"nvim-lua/plenary.nvim",
+	--"nvim-lua/plenary.nvim",
 
-    -- LSP
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    ---- LSP
+    --"williamboman/mason.nvim",
+    --"williamboman/mason-lspconfig.nvim",
+    --"neovim/nvim-lspconfig",
 
-	-- Colors
-	"bluz71/vim-nightfly-guicolors",
-	"sheerun/vim-polyglot",
-	"morhetz/gruvbox",
-	"rakr/vim-one",
-	"Lokaltog/vim-distinguished",
-	"nanotech/jellybeans.vim",
-	"folke/tokyonight.nvim",
-	"bfrg/vim-cuda-syntax",
-	"rebelot/kanagawa.nvim",
-    "NLKNguyen/papercolor-theme",
-    "romainl/Apprentice",
+	---- Colors
+	--"bluz71/vim-nightfly-guicolors",
+	--"sheerun/vim-polyglot",
+	--"morhetz/gruvbox",
+	--"rakr/vim-one",
+	--"Lokaltog/vim-distinguished",
+	--"nanotech/jellybeans.vim",
+	--"folke/tokyonight.nvim",
+	--"bfrg/vim-cuda-syntax",
+	--"rebelot/kanagawa.nvim",
+    --"NLKNguyen/papercolor-theme",
+    --"romainl/Apprentice",
 
 	-- FZF
 	-- Note that we need some extra steps as per https://github.com/junegunn/fzf.vim/issues/1388#issuecomment-1462691362
@@ -49,14 +59,8 @@ return require("lazy").setup({
 	-- },
 
     -- Telescope
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make"
-    },
-    {"nvim-telescope/telescope.nvim", branch = "0.1.x"},
-
     -- file explorer
-    "nvim-tree/nvim-tree.lua",
+    --"nvim-tree/nvim-tree.lua",
 
     -- Treesitter
     {
@@ -69,13 +73,13 @@ return require("lazy").setup({
 
     -- I wasn't going to do it, but the file explorer seems better with some icons
     -- NOTE: does this require ligature support in terminal?
-    "kyazdani42/nvim-web-devicons",
+    -- "kyazdani42/nvim-web-devicons",
 
     -- statusline 
-    "nvim-lualine/lualine.nvim",
+    --"nvim-lualine/lualine.nvim",
 
     -- Navigation, editing, etc
-    "tpope/vim-surround",
+    -- "tpope/vim-surround",
 
     -- Jupyter plugin 
     --"luk400/vim-jukit",
