@@ -1,6 +1,5 @@
 -- Lazy requires that mapleader is set before loading lazy
 vim.g.mapleader = "\\"
-vim.g.localleader = "\\"
 
 -- boostrap lazy
 require("core.lazy")
@@ -8,12 +7,7 @@ require("core.lazy")
 -- General setup
 require("core.options")
 require("core.keymaps")
-require("core.colorscheme")
 require("core.lsp_attach")
-
--- Plugin specific setups
---require("plugins.lualine")
---require("plugins.nvim-tree")
 
 -- Try turning netrw back on
 vim.g.loaded_netrw = 0
