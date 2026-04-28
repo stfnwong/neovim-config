@@ -6,7 +6,9 @@ return {
 	{ "EdenEast/nightfox.nvim" },
 
 	-- Pick this one
-	{ "bluz71/vim-nightfly-guicolors", lazy = false, priority = 1000 },
+	{ "bluz71/vim-moonfly-colors" },
+	{ "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+	{ "bluz71/vim-nightfly-guicolors" },
 	{ "sheerun/vim-polyglot" },
 	{ "morhetz/gruvbox" },
 	{ "rakr/vim-one" },
