@@ -30,7 +30,7 @@ return {
 					"clojure_lsp",
 					"hdl_checker",
 					"html",
-					"hls",
+					-- "hls",  -- TODO: this doesn't seem to work...
 				},
 			})
 

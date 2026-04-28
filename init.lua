@@ -1,5 +1,6 @@
 -- Lazy requires that mapleader is set before loading lazy
 vim.g.mapleader = "\\"
+vim.g.localleader = "\\"
 
 -- boostrap lazy
 require("core.lazy")

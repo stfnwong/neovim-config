@@ -1,5 +1,3 @@
-vim.g.mapleader = "\\" -- set leader key
-
 local keymap = vim.keymap
 
 -- general keymaps
