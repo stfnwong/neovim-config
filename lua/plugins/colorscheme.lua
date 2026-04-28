@@ -1,11 +1,11 @@
 return {
 	{
-		"bluz71/vim-nightfly-colors",
-		name = "nightfly",
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("nightfly")
+			vim.cmd.colorscheme("kanagawa")
 		end,
 	},
 
@@ -15,7 +15,7 @@ return {
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "EdenEast/nightfox.nvim" },
 
-	-- Pick this one
+	{ "bluz71/vim-nightfly-colors" },
 	{ "bluz71/vim-moonfly-colors" },
 	{ "bluz71/vim-nightfly-guicolors" },
 	{ "sheerun/vim-polyglot" },
