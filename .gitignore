@@ -10,3 +10,6 @@ plugin/
 
 # Ignore jukits folder if that turns up 
 .jukit/
+
+# Ignore json (for now), will add this back once plugins are working
+*.json
