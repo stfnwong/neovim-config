@@ -1,4 +1,14 @@
 return {
+	{
+		"bluz71/vim-nightfly-colors",
+		name = "nightfly",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("nightfly")
+		end,
+	},
+
 	{ "folke/tokyonight.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rebelot/kanagawa.nvim" },
@@ -7,7 +17,6 @@ return {
 
 	-- Pick this one
 	{ "bluz71/vim-moonfly-colors" },
-	{ "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
 	{ "bluz71/vim-nightfly-guicolors" },
 	{ "sheerun/vim-polyglot" },
 	{ "morhetz/gruvbox" },
