@@ -2,7 +2,11 @@ return {
 	-- Mason: the installer
 	{
 		"mason-org/mason.nvim",
-		opts = {}, -- mason.setup() with defaults, opts is fine here
+		opts = {
+			servers = {
+				ty = {},
+			},
+		},
 	},
 
 	-- Bridge: mason <-> lspconfig
