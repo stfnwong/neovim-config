@@ -3,6 +3,11 @@ return {
 	version = "*",
 	opts = {
 		completion = {
+			accept = {
+				auto_brackets = {
+					enabled = false,
+				},
+			},
 			trigger = {
 				show_on_keyword = false,
 				show_on_trigger_character = false,
