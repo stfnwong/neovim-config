@@ -53,7 +53,7 @@ opt.termguicolors = true
 opt.background = "dark" -- forces colorschemes to default to dark
 
 -- clipboard
-opt.clipboard:append("unnamedplus")
+vim.opt.clipboard = "unnamedplus"
 
 -- window splits
 opt.splitright = true
