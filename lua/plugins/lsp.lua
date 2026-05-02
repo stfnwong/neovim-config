@@ -76,10 +76,23 @@ return {
 					settings = {
 						basedpyright = {
 							typeCheckingMode = "standard",
+							disableOrganizeImports = true, -- have ruff handle this
+
 							analysis = {
 								autoSearchPaths = true,
 								useLibraryCodeForTypes = true,
 								diagnosticMode = "openFilesOnly",
+								typeCheckingMode = "basic",
+							},
+
+							-- TODO: try this out and see if it gives the results I want
+							-- The idea is just to reduce the amount of visual clutter that
+							-- is present by default
+							inlayHints = {
+								variableTypes = false,
+								callArgumentNames = false,
+								functionReturnTypes = false,
+								genericTypes = false,
 							},
 						},
 					},
