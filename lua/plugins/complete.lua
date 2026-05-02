@@ -4,6 +4,7 @@ return {
 	opts = {
 		completion = {
 			accept = {
+				-- What is the equivalent for matching parens, quotes, etc?
 				auto_brackets = {
 					enabled = false,
 				},
