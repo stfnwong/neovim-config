@@ -44,27 +44,29 @@ am completely new to this world of customizing everything with `lua`.
 
 The directory layout is 
 
-```.
+```
 ├── init.lua
-├── init.vim.old     # Ignore this
+├── lazy-lock.json
+├── lazyvim.json
 ├── lua
 │   ├── core
-│   │   ├── colorscheme.lua
 │   │   ├── keymaps.lua
+│   │   ├── lazy.lua
+│   │   ├── lsp_attach.lua
 │   │   └── options.lua
-│   ├── plugins
-│   │   ├── lsp-config.lua
-│   │   ├── lualine.lua
-│   │   ├── nvim-tree.lua
-│   │   ├── telescope.lua
-│   │   └── treesitter.lua
-│   └── plugin-setup.lua
-├── plugin
-│   └── packer_compiled.lua
-└── README.md    # <- This file
+│   └── plugins
+│       ├── colorscheme.lua
+│       ├── complete.lua
+│       ├── disabled.lua
+│       ├── icons.lua
+│       ├── lsp.lua
+│       ├── noice.lua
+│       ├── nvim_tree.lua
+│       ├── surround.lua
+│       ├── tabline.lua
+│       ├── telescope.lua
+│       └── trouble.lua
 ```
-
-
 
 
 I followed some guide or other that puts all the `lua` stuff into named folders.
