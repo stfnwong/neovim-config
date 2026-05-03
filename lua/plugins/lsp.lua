@@ -27,6 +27,7 @@ return {
 				"hdl_checker",
 				"html",
 				"hls",
+				"ty",
 			},
 		},
 	},
@@ -105,7 +106,25 @@ return {
 			end
 
 			-- Servers not in mason (installed manually, e.g. uv tool install ty)
-			lspconfig.ty.setup({ capabilities = capabilities })
+			lspconfig.ty.setup({
+				capabilities = capabilities,
+				settings = {
+					ty = {
+						-- let ty handle diagnostics, use basedpyright for everything else
+						disableLanguageServices = true,
+						-- only check open files (not the whole workspace)
+						diagnosticMode = "openFilesOnly",
+						-- basedpyright is currently catching syntax errors
+						showSyntaxErrors = false,
+
+						-- Remove inlay hints
+						inlayHints = {
+							variableTypes = false,
+							callArgumentNames = false,
+						},
+					},
+				},
+			})
 		end,
 	},
 }
