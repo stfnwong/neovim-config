@@ -6,7 +6,7 @@ return {
 		-- Current buffer's diagnostics: your primary "what's wrong here" view
 		{
 			"<leader>xx",
-			"<cmd>Trouble document_diagnostics toggle<cr>",
+			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 			desc = "Buffer diagnostics (Trouble)",
 		},
 		-- All workspace diagnostics
