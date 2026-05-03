@@ -16,10 +16,10 @@ return {
 
 	keys = {
 		-- Opening tabs
-		{ "<leader>tn", "<cmd>tabnew<cr>", desc = "New tab" },
-		{ "<leader>te", "<cmd>tabedit<space>", desc = "Edit file in new tab" },
-		{ "<leader>tc", "<cmd>tabclose<cr>", desc = "Close tab" },
-		{ "<leader>to", "<cmd>tabonly<cr>", desc = "Close all other tabs" },
+		-- { "<leader>tn", "<cmd>tabnew<cr>", desc = "New tab" },
+		-- { "<leader>te", "<cmd>tabedit<space>", desc = "Edit file in new tab" },
+		-- { "<leader>tc", "<cmd>tabclose<cr>", desc = "Close tab" },
+		-- { "<leader>to", "<cmd>tabonly<cr>", desc = "Close all other tabs" },
 
 		-- Navigation: keeping your S-h/S-l muscle memory
 		{ "<S-h>", "<cmd>tabprevious<cr>", desc = "Prev tab" },
