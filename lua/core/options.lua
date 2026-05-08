@@ -64,3 +64,22 @@ opt.splitbelow = false
 
 -- I don't like the scrolling in lazy
 vim.g.snacks_animate = false
+
+-- Re-create some legacy LSP commands
+-- Taken from https://jdhao.github.io/2026/04/02/nvim-v012-release/
+vim.api.nvim_create_user_command("LspInfo", "checkhealth vim.lsp", {
+	desc = "Show LSP Info",
+})
+
+vim.api.nvim_create_user_command("LspLog", function(_)
+	local state_path = vim.fn.stdpath("state")
+	local log_path = vim.fs.joinpath(state_path, "lsp.log")
+
+	vim.cmd(string.format("edit %s", log_path))
+end, {
+	desc = "Show LSP log",
+})
+
+vim.api.nvim_create_user_command("LspRestart", "lsp restart", {
+	desc = "Restart LSP",
+})
