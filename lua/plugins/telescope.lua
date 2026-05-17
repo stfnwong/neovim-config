@@ -40,23 +40,23 @@ return {
 
 		telescope.load_extension("fzf")
 
-		-- Use telescope to display LSP
-		local builtin = require("telescope.builtin")
+		---- Use telescope to display LSP
+		--local builtin = require("telescope.builtin")
 
-		-- Remap LSP keys to telescope equivalents
-		-- These shadow the definitions in lua/core/lsp_attach.lua
-		vim.api.nvim_create_autocmd("LspAttach", {
-			group = vim.api.nvim_create_augroup("TelescopeLspAttach", { clear = true }),
-			callback = function(ev)
-				local opts = { buffer = ev.buf }
+		---- Remap LSP keys to telescope equivalents
+		---- These shadow the definitions in lua/core/lsp_attach.lua
+		--vim.api.nvim_create_autocmd("LspAttach", {
+		--	group = vim.api.nvim_create_augroup("TelescopeLspAttach", { clear = true }),
+		--	callback = function(ev)
+		--		local opts = { buffer = ev.buf }
 
-				vim.keymap.set("n", "gr", builtin.lsp_references, opts)
-				vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
-				vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
-				vim.keymap.set("n", "<leader>D", builtin.lsp_type_definitions, opts)
-				vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, opts)
-				vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, opts)
-			end,
-		})
+		--		vim.keymap.set("n", "gr", builtin.lsp_references, opts)
+		--		vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
+		--		vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
+		--		vim.keymap.set("n", "<leader>D", builtin.lsp_type_definitions, opts)
+		--		vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, opts)
+		--		vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, opts)
+		--	end,
+		--})
 	end,
 }
