@@ -60,7 +60,7 @@ opt.splitright = true
 opt.splitbelow = false
 
 -- Don't have so much scrolloff
-vim.opt.scrolloff = 2
+vim.opt.scrolloff = 1
 
 -- affect how words are joined
 --opt.iskeyword:append("-")   -- adding this means that text joined with '-' is considered a single word
