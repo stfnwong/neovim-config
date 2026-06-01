@@ -20,20 +20,11 @@ vim.opt.rtp:prepend(lazypath)
 return require("lazy").setup({
 	spec = {
 		-- Add LazyVim and import its plugin
-		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		--{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import extras modules here
 		-- import local plugins
 		{ import = "plugins" },
 		{ import = "plugins.lsp" }, -- for mason
 	},
-
-	-- Treesitter
-	-- TODO: do I ever use this?
-	--{
-	--  "nvim-treesitter/nvim-treesitter",
-	--  build = function()
-	--    local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-	--    ts_update()
-	--  end,
 	--},
 })
