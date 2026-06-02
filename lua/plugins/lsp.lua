@@ -27,7 +27,7 @@ return {
 				"clojure_lsp",
 				"hdl_checker",
 				"html",
-				"hls",
+				--"hls",
 				"ty",
 			},
 		},

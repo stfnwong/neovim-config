@@ -6,6 +6,7 @@ require("core.lazy")
 
 -- General setup
 require("core.options")
+require("core.autocmds")
 require("core.keymaps")
 require("core.lsp_attach")
 
