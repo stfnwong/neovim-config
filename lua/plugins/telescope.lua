@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 
 	config = function()
@@ -17,6 +18,7 @@ return {
 						["<C-k>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<C-t>"] = actions.select_tab,
 					},
 				},
 				pickers = {
@@ -35,9 +37,23 @@ return {
 						symbol_width = 40,
 					},
 				},
+
+				-- Extensions to style the ui-select popup
+				extensions = {
+					["ui-select"] = {
+						require("telescope.themes").get_dropdown({
+							previewer = false,
+							layout_config = {
+								width = 0.4,
+								height = 0.4
+							},
+						}),
+					}
+				},
 			},
 		})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("ui-select")  -- register overrride
 	end,
 }
