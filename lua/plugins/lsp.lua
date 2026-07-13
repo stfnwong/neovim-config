@@ -23,7 +23,7 @@ return {
 				"docker_compose_language_service",
 				"dockerls",
 				"yamlls",
-				"bashls",
+				--"bashls",
 				"clojure_lsp",
 				"hdl_checker",
 				"html",
