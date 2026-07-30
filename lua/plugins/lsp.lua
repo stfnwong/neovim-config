@@ -14,7 +14,7 @@ return {
 		},
 		opts = {
 			ensure_installed = {
-				"basedpyright",
+				--"basedpyright",
 				"lua_ls",
 				"clangd",
 				"rust_analyzer",
